@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<query>
+  <select>
+    <loginQuery>
+      select * from user where UserId = '%s' and UserPassword = '%s'
+    </loginQuery>
+    <idCheckQuery>
+      select * from user where UserId = '%s'
+    </idCheckQuery>
+  </select>
+  <insert>
+   <userAddQuery>
+     insert into user VALUES ('%s','%s','%s')
+   </userAddQuery>
+  </insert>
+</query>
