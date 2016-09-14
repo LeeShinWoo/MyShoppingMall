@@ -1,7 +1,0 @@
-{
-  "host"    :"localhost",
-  "port" : 3306,
-  "user" : "shinwoo",
-  "password" : "me14eda1",
-  "database":"shinwooDB"
-}
