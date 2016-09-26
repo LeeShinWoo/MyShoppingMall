@@ -17,6 +17,7 @@ app.engine('html', require('ejs').renderFile);
 var request = require('request');
 
 //mysql 관련 소스
+// lee youngwoo
 
 var connection = mysql.createConnection({
     host    :db_config.host,
