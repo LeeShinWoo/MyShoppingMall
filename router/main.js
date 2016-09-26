@@ -11,7 +11,7 @@ module.exports = function(app, fs, connection,util,db_query)
        res.render('views/loginFormExer.html');
       }
     });
-    
+
     app.get('/test',function(req,res){
      res.render('views/test.html');
     });
@@ -77,6 +77,13 @@ module.exports = function(app, fs, connection,util,db_query)
             res.redirect('/');
         }
     })
+
+
+    app.get('/loadpage',function(req,res){
+      var pagename = req.query.pagename;
+      console.log(pagename);
+      res.render('views/'+pagename);
+    });
 
     app.get('/index3',function(req,res){
       sess = req.session;

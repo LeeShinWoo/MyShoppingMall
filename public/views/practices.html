@@ -5,15 +5,39 @@
     <title>반응형페이지1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style/header.css" media="screen" title="no title">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+      function load_page(pagename){
+        $.ajax({
+          type : 'GET',
+          url : '/loadpage?pagename='+pagename,
+          success : function(data) {
+            $('.content').remove();
+            $('body').append(data);
+          },
+          error : function (xhr, status, error) {
+            alert("통신에러 발생!!")
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
+          }
+        });
+      }
+    </script>
   </head>
   <body>
-    <article>
      <header>
-       <h1>Most important heading here</h1>
-      <h3>Less important heading here</h3>
-       <p>Some additional information here</p>
+       <img id="logo" src="/img/scale.png"/>
      </header>
-     <p>Lorem Ipsum dolor set amet....</p>
-  </article>
+     <nav>
+       <img src="/img/scale.png" onclick="load_page('1page');"/>
+       <img src="/img/scale.png" onclick="load_page('2page');"/>
+       <img src="/img/scale.png" onclick="load_page('3page');"/>
+       <img src="/img/scale.png" onclick="load_page('4page');"/>
+       <img src="/img/scale.png" onclick="load_page('5page');"/>
+     </nav>
+     <div class="content">
+       <p>index Page!!</p>
+     </div>
   </body>
 </html>
