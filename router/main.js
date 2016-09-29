@@ -1,4 +1,4 @@
-module.exports = function(app, fs, connection,util,db_query)
+module.exports = function(app, fs, connection,util,db_query,formidable)
 {
     app.get('/',function(req,res){
       var sess = req.session;
@@ -85,6 +85,24 @@ module.exports = function(app, fs, connection,util,db_query)
       res.render('views/'+pagename);
     });
 
+
+    app.post('/upload',function(req,res){
+      var fstream;
+      req.pipe(req.busboy);
+      req.busboy.on('file', function (fieldname, file, filename) {
+          var dt = new Date();
+          var d = dt.toFormat('YYYYMMDDHH24MISS');
+          var reName = d+filename;
+          console.log("Uploading: " + reName);
+          fstream = fs.createWriteStream('./public/upload/' + reName);
+          file.pipe(fstream);
+          fstream.on('close', function () {
+            res.render('views/loadImg', {
+              imgPath : reName
+           });
+          });
+      });
+    })
     app.get('/index3',function(req,res){
       sess = req.session;
       fs.readFile( __dirname + "/../data/" + "user.json", 'utf8', function (err, data) {
