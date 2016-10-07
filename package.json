@@ -1,0 +1,35 @@
+{
+  "license": "UNLICENSED",
+  "author": [
+    {
+      "name" : "LEE Young Woo",
+      "email" : "",
+      "url" : ""
+    },
+    {
+      "name" : "Lee Shin Woo",
+      "email" : "dltlsdn12312@naver.com",
+      "url" : ""
+    }
+  ],
+  "name": "MyShoppingMall",
+  "version": "0.0.1",
+  "bin": {
+    "myapp": "./server.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/LeeShinWoo/MyShoppingMall.git"
+  },
+  "dependencies": {
+    "express" : ">=4.14.0",
+    "body-parser" : ">=1.15.2",
+    "express-session" : ">=1.14.1",
+    "mysql" : ">=2.11.1",
+    "util" : ">=0.10.3",
+    "xml-digester" : ">=0.0.5",
+    "connect-busboy" : ">=0.0.2",
+    "date-utils" : ">=1.2.21",
+    "ejs" : ">=2.5.2"
+  }
+}

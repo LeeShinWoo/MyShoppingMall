@@ -17,8 +17,6 @@ app.set('views',__dirname + '/public');
 app.set('view engine','ejs');
 app.engine('html', require('ejs').renderFile);
 
-var request = require('request');
-
 //mysql 관련 소스
 // lee youngwoo
 

@@ -3,8 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>loadImg</title>
+    <script type="text/javascript">
+      window.addEventListener('load',function(){
+        var test = '../upload/'+document.getElementsByTagName('myProfile')[0].innerHTML;
+        document.querySelector('#myuploadImg').src = test;
+      })
+    </script>
   </head>
   <body>
-    <img src=<%= "../upload/"+imgPath %> >
+    <div id="params" style="display:none">
+      <myProfile><%= imgPath %></myProfile>
+    </div>
+    <img id='myuploadImg' width="500px" height="500px"/>
   </body>
 </html>
