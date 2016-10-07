@@ -1,5 +1,41 @@
 module.exports = function(app, fs, connection,util,db_query,formidable)
 {
+  app.get('/shop',function(req,res){
+     res.render('index.html');
+  });
+  app.get('/loginPage',function(req,res){
+     res.render('login.html');
+  });
+  app.get('/join',function(req,res){
+     res.render('join.html');
+  });
+  app.post('/login',function(req,res){
+       var sess = req.session;
+       var userId = req.body.id;
+       var password = req.body.password;
+       var query = util.format(db_query.query.select.loginQuery,userId,password);
+       connection.query(query ,function(err,rows){
+         if(rows.length == 1){
+           sess.member = rows[0];
+           res.render('loginafter.html',rows[0]);
+         }else{
+           res.redirect('error.html');
+         }
+
+       });
+  });
+  app.post('/joinMember',function(req,res){
+    var sess = req.session;
+    var userName = req.body.name;
+    var userId = req.body.id;
+    var password = req.body.password;
+    var email = req.body.email + '@' + req.body.domain;
+    var query = util.format(db_query.query.insert.userAddQuery,userId,password,userName,email);
+    connection.query(query,function(err,rows){
+        res.redirect('/shop');
+    });
+  });
+
     app.get('/',function(req,res){
       var sess = req.session;
       var error = req.query.error;
@@ -15,6 +51,7 @@ module.exports = function(app, fs, connection,util,db_query,formidable)
     app.get('/test',function(req,res){
      res.render('views/test.html');
     });
+    /*
     app.post('/login',function(req,res){
       var sess = req.session;
       var username = req.body.id;
@@ -32,7 +69,7 @@ module.exports = function(app, fs, connection,util,db_query,formidable)
 
       });
     });
-
+    */
     app.get('/registerPage',function(req,res){
       res.render('views/register.html');
     });

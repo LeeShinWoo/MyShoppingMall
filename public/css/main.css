@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/*main content*/
+#content > div{width:100%;min-width:320px;max-width:1200px;margin:0 auto;}
+#content > div > div{padding:2.5% 1.66%;} /*pd 1200.30.20*/
+
+/*visual*/
+#visual{margin-bottom:2.58%;} /*mg 1160.30*/
+#visual > div{position:relative;}
+#visual > div > img{display:none;position:absolute;left:0;top:0;width:100%;max-width:1160px;max-height:400px;}
+#visualBtn{position:absolute;top:20px;left:20px;}
+#visualBtn a{overflow:hidden;display:inline-block;width:15px;height:15px;margin-right:5px;border-radius:50%;font-size:0;text-indent:-99999px;background-color:rgba(51,51,51,0.6);transition:all 0.8s;}
+#visualBtn a:last-child{margin-right:0;}
+#visualBtn a:hover,
+#visualBtn a:active,
+#visualBtn a:focus,
+#visualBtn a.on{width:35px;border-radius:20px;background-color:#d13538;}
+
+/*메인 비쥬얼 사진 밑 3list*/
+#sale{margin-bottom:2.58%;} /*mg 1160.30*/
+#sale ul:after{content:"";display:block;clear:both;}
+#sale ul > li{float:left;width:25%;} /*w 1160.290*/
+#sale ul > li:nth-child(2){margin:0 12.5%;}
+#sale ul > li > a{display:block;height:83px;line-height:83px;padding-left:20px;border:2px solid #d13538;border-top:none;border-right:none;font-size:2.14em;color:#d13538;transition:all 0.4s;} /*fz 30/14*/
+#sale ul > li:nth-child(2) > a{border-color:#333;color:#333;}
+#sale ul > li > a:hover,
+#sale ul > li > a:active,
+#sale ul > li > a:focus{color:#fff;background-color:#d13538;transform:rotate(5deg) scale(0.9);}
+#sale ul > li:nth-child(2) > a:hover,
+#sale ul > li:nth-child(2) > a:active,
+#sale ul > li:nth-child(2) > a:focus{background-color:#333;}
+
+/*best product*/
+#best{margin-bottom:2.58%;} /*mg 1160.30*/
+#best .bestTit{margin-bottom:2.58%;height:50px;line-height:50px;padding-left:70px;font-size:2.85em;background:url(../img/main/best_icon.png) no-repeat 0 50%;} /*mg 1160.30 // fz 40/14*/
+#best ul{overflow:hidden;}
+#best ul > li{float:left;width:32.75%;} /*w 1160.380*/
+#best ul > li:nth-child(2){margin:0 0.875%;}
+#best ul > li > a{display:block;border:1px solid #ccc;}
+#best ul > li > a > div{position:relative;}
+#best ul > li > a > div .img_zone{max-height:300px;}
+#best ul > li > a > div .img_zone > img{width:100%;max-height:300px;}
+#best ul > li > a > div .txt_zone{padding:5.29%;border-top:1px solid #ccc;} /*pd 378.20*/
+#best ul > li > a > div .txt_zone > strong{overflow:hidden;display:block;width:100%;height:40px;font-size:1.42em;white-space:nowrap;text-overflow:ellipsis;} /*fz 20/14*/
+#best ul > li > a > div .txt_zone > p{overflow:hidden;width:100%;height:40px;font-size:1.42em;white-space:nowrap;text-overflow:ellipsis;} /*fz 20/14*/
+#best ul > li > a > div .txt_zone > p > span.color{margin-right:20px;color:#d13538;}
+#best ul > li > a > div .txt_zone > span.last{display:inline-block;height:20px;line-height:18px;padding:0 5px;font-size:1em;color:#fff;background-color:#333;}
+#best ul > li > a > div > .ranking{position:absolute;top:0;left:10px;display:inline-block;width:50px;height:50px;box-shadow:3px 3px 5px #333;}
+
+/*main bottom*/
+#mainBottomBanner > div{border:1px solid #d13538;border-radius:3px;}
+#mainBottomBanner ul{overflow:hidden;}
+#mainBottomBanner ul > li{float:left;width:25%;} /*w 290*/
+#mainBottomBanner ul > li > a{display:block;padding:10.34% 0;font-size:1.42em;text-align:center;} /*pd 290.30 // fz 20/14*/
+
+/*해상도 768px ~ 1024px*/
+@media all and (min-width:768px) and (max-width:1023px){
+	body{font-size:12px;}
+}
+
+/*해상도 320px ~ 767px*/
+@media all and (min-width:320px) and (max-width:767px){
+	body{font-size:10px;}
+
+	/*visual*/
+	#visual{margin-bottom:10%;} /*mg 300.30*/
+	
+	/*메인 비쥬얼 사진 밑 3list*/
+	#sale{margin-bottom:10%;}
+	#sale ul > li{float:none;width:80%;margin:0 auto;transition:width 0.4s;}
+	#sale ul > li:nth-child(2){margin:20px auto;} 
+	#sale ul > li:hover,
+	#sale ul > li:active,
+	#sale ul > li:focus{width:90%;}
+	#sale ul > li > a{height:50px;line-height:50px;padding-left:0;border-left:none;text-align:center;transition:none;}
+	#sale ul > li > a:hover,
+	#sale ul > li > a:active,
+	#sale ul > li > a:focus{transform:none;}
+
+	/*best product*/
+	#best{margin-bottom:10%;}
+	#best .bestTit{margin-bottom:5%;} /*mg 300.15 */
+	#best ul{overflow:visible;}
+	#best ul > li{float:none;width:300px;margin:0 auto;}
+	#best ul > li:nth-child(2){margin:20px auto;}
+	#best ul > li > a > div .txt_zone > strong{height:30px;}
+	#best ul > li > a > div .txt_zone > p{height:30px;}
+	#best ul > li > a > div .txt_zone > p > span.color{margin-right:15px;}
+
+	/*main bottom*/
+	#mainBottomBanner > div{border:none;border-radius:none;}
+	#mainBottomBanner ul > li{width:50%;}
+	#mainBottomBanner ul > li > a{margin:1%;border:1px solid #d13538;}
+}

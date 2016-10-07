@@ -2,15 +2,15 @@
 <query>
   <select>
     <loginQuery>
-      select * from user where UserId = '%s' and UserPassword = '%s'
+      select * from user where login_id = '%s' and password = '%s'
     </loginQuery>
     <idCheckQuery>
-      select * from user where UserId = '%s'
+      select * from user where login_id = '%s'
     </idCheckQuery>
   </select>
   <insert>
    <userAddQuery>
-     insert into user VALUES ('%s','%s','%s')
+     insert into user(login_id,password,name,email) VALUES ('%s','%s','%s','%s');
    </userAddQuery>
   </insert>
 </query>

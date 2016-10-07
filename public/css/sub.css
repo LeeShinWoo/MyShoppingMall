@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/*로그인*/
+#login{width:400px;margin:0 auto;padding:8.33% 0;} /*pd 1200.100*/
+#login h2{margin-bottom:10%;font-size:1em;text-align:center;} /*mg 400.40*/
+#login h2 > span{display:inline-block;padding:2.5% 0;border:2px solid #d13538;border-left:0;border-right:0;font-size:2.85em;color:#d13538;} /* pd 400.10 // fz 40/14*/
+
+#loginBox{border-bottom:2px solid #d13538;}
+#loginBox input{-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;-ms-appearance:none;appearance:none;} /*input 기본 스타일 제거*/
+#loginBox input[type=text],
+#loginBox input[type=password]{width:100%;height:38px;line-height:38px;border:1px solid #999;border-radius:3px;text-indent:10px;}
+#loginBox input#idSave + label{display:inline-block;padding-left:25px;height:20px;line-height:18px;font-size:1.07em;background:url(../img/common/check_off.gif) no-repeat 0 50%;} /*fz15/14*/
+#loginBox input#idSave:checked + label{background:url(../img/common/check_on.gif) no-repeat 0 50%;}
+#loginBox input#loginSubmit{width:100%;height:40px;border:1px solid #d13538;border-radius:3px;font-size:1.78em;color:#d13538;background-color:transparent;cursor:pointer;transition:all 0.4s;} /*fz 25/14*/
+#loginBox input#loginSubmit:hover,
+#loginBox input#loginSubmit:active,
+#loginBox input#loginSubmit:focus{color:#fff;background-color:#d13538;}
+#loginBox form fieldset > div{margin-bottom:2.5%;} /*mg 400.10*/
+#loginBox form fieldset > div.third{margin-bottom:5%;} /*mg 400.20*/ 
+#loginBox form fieldset > div.third + div{margin-bottom:10%;} /*mg 400.40*/
+
+#helpBox > div{overflow:hidden;padding-top:10%;} /*pd 400.40*/
+#helpBox .row{float:left;width:100%;}
+#helpBox .row > div{float:left;width:50%;height:30px;line-height:30px;}
+#helpBox .row > div:first-child{font-size:1.28em;text-align:center;} /*fz 18/14*/
+#helpBox .row > div > a{display:inline-block;width:90px;height:25px;line-height:25px;font-size:1.07em;color:#fff;text-align:center;background-color:#d13538;} /*fz 15/14*/
+
+/*회원가입*/
+#join{width:400px;margin:0 auto;padding:8.33% 0;} /*pd 1200.100*/
+#join h2{margin-bottom:10%;font-size:1em;text-align:center;} /*mg 400.40*/
+#join h2 > span{display:inline-block;padding:2.5% 0;border:2px solid #d13538;border-left:0;border-right:0;font-size:2.85em;color:#d13538;} /* pd 400.10 // fz 40/14*/
+
+#joinBox input{-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;-ms-appearance:none;appearance:none;} /*input 기본 스타일 제거*/
+#joinBox input[type=text],
+#joinBox input[type=password]{width:100%;height:38px;line-height:38px;border:1px solid #999;border-radius:3px;text-indent:10px;}
+#joinBox input[type=checkbox] + label{display:inline-block;padding-left:25px;height:20px;line-height:18px;font-size:1.07em;background:url(../img/common/check_off.gif) no-repeat 0 50%;} /*fz 15/14*/
+#joinBox input[type=checkbox]:checked + label{background:url(../img/common/check_on.gif) no-repeat 0 50%;}
+#joinBox form fieldset > div{margin-bottom:2.5%;} /*mg 400.10*/
+#joinBox form fieldset > div.email{overflow:hidden;margin-bottom:10%;} /*mg 400.40*/
+#joinBox form fieldset > div.email > input{float:left;width:188px;}
+#joinBox form fieldset > div.email > span{float:left;width:20px;height:40px;line-height:40px;font-size:1.28em;text-align:center;} /*fz 18/14*/
+
+#joinBox .checklist{margin-bottom:10%;} /*mg 400.40*/
+#joinBox .checklist ul li{height:40px;line-height:40px;}
+#joinBox .checklist ul li:first-child{text-align:center;}
+#joinBox .checklist ul li a{display:inline-block;width:70px;height:25px;line-height:25px;font-size:1.07em;color:#fff;text-align:center;background-color:#d13538;} /*fz 15/14*/
+
+#joinBox .btn{text-align:center;}
+#joinBox .btn input[type=submit]{width:130px;height:40px;border:1px solid #d13538;border-radius:3px;font-size:1.28em;color:#d13538;background-color:transparent;cursor:pointer;transition:all 0.4s;} /*fz 18/14*/
+#joinBox .btn input[type=submit]:hover,
+#joinBox .btn input[type=submit]:active,
+#joinBox .btn input[type=submit]:focus{color:#fff;background-color:#d13538;}
+
+/*해상도 320px ~ 767px*/
+@media all and (min-width:320px) and (max-width:767px){
+	body{font-size:10px;}
+
+	/*로그인*/
+	#login{width:300px;}
+	#helpBox .row > div > a{width:65px;}
+	
+	/*회원가입*/
+	#join{width:300px;}
+	#joinBox form fieldset > div.email > input{width:138px;}
+	#joinBox form fieldset > div.email > span{width:20px;}
+	#joinBox .checklist ul li a{width:55px;}
+}

@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+@font-face {
+	font-family:"KBIZR";
+	src: url('../font/KBIZR.eot');
+	src: url('../font/KBIZR.woff'),
+		url('../font/KBIZR.ttf'),
+		url('../font/KBIZR.otf');
+}
+
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}
+fieldset,img{border:none;}
+dl,ul,ol,menu,li{list-style:none;}
+blockquote, q{quotes:none;}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;}
+input,select,textarea,button{vertical-align:middle;}
+button{border:none;background-color:transparent;cursor:pointer;}
+body{background:#fff;}
+body,th,td,input,select,textarea,button{font-size:14px;line-height:1;font-family:'KBIZR','맑은 고딕',sans-serif;color:#333;font-weight:normal;}
+a{color:#333;text-decoration:none;}
+a:active, a:hover{text-decoration:none;}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
+caption,legend{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+img{vertical-align:top;}
+
+/*fous outline*/
+*:focus{box-shadow:0 0 5px #d13538;outline:1px solid #d13538;}
+
+/* class */
+.hide{display:none;}
+.vis{width:1px;height:1px;line-height:0;text-indent:-999999%;overflow:hidden;position:absolute;left:-99999%;}
+.clear:after{content:"";display:block;clear:both;}
+.green{color:#43853d;}
+.white .green{text-shadow:2px 2px #ccc;}
+.ovh{overflow:hidden;}
+
+/*datepicker*/
+.datepicker + img{padding-left:10px;cursor:pointer;vertical-align:middle;}
+
+/*drag 설정*/
+::selection{color:#fff;background:rgba(51,51,51,0.9);text-shadow:none;}
+::-moz-selection{color:#fff;background:rgba(51,51,51,0.9);text-shadow:none;}
+::-webkit-selection{color:#fff;background:rgba(51,51,51,0.9);text-shadow:none;}
+
+/*placeholder*/
+::-webkit-input-placeholder{color:#999;font-size:1em;}
+:-moz-placeholder{color:#999;opacity:1;} /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder{color:#999;opacity:1;} /* Mozilla Firefox 19+ */
+:-ms-input-placeholder{color:#999;} /* Internet Explorer 10-11 */

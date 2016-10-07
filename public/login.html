@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>JS:: 로그인 ::</title>
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/sub.css">
+
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+<div>
+
+	<% include html/header.html %>
+
+	<section id="content">
+		<div>
+			<div>
+
+				<section id="login">
+
+					<h2>
+						<span>LOGIN</span>
+					</h2>
+
+					<div id="loginBox">
+						<form action="/login" method="post">
+							<fieldset>
+								<legend>로그인</legend>
+								<div>
+									<input type="text"  name="id" id="id" placeholder="ID" title="아이디를 입력하세요">
+								</div>
+								<div>
+									<input type="password"  name="password" id="pw" placeholder="PASSWORD" title="비밀번호를 입력하세요">
+								</div>
+								<div class="third">
+									<input type="checkbox" name="#" id="idSave" class="vis" title="아이디 저장하기">
+									<label for="idSave">아이디 저장하기</label>
+								</div>
+								<div>
+									<input type="submit" value="LOGIN" id="loginSubmit" title="로그인하기">
+								</div>
+							</fieldset>
+						</form>
+					</div>
+
+					<div id="helpBox">
+						<div>
+							<div class="row">
+								<div>
+									도움이 필요하신가요?
+								</div>
+								<div>
+									<a href="javascript:;">아이디 찾기</a>
+									<a href="javascript:;">비밀번호 찾기</a>
+								</div>
+							</div>
+							<div class="row">
+								<div>
+									아직도 회원이 아니세요?
+								</div>
+								<div>
+									<a href="join.php">회원가입</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+			</div>
+		</div>
+	</section>
+
+	<% include html/footer.html %>
+
+</div>
+</div>
+</body>
+</html>

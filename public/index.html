@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>JS Shop</title>
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+<div>
+
+	<% include html/header.html %>
+
+	<section id="content">
+		<div>
+			<div>
+
+				<section id="main">
+
+					<div id="visual">
+						<div>
+
+							<img src="img/main/slider01.jpg" alt="메인사진">
+							<img src="img/main/slider02.jpg" alt="메인사진">
+							<img src="img/main/slider03.jpg" alt="메인사진">
+
+						</div>
+					</div>
+
+					<div id="sale">
+						<ul>
+							<li><a href="javascript:;">오늘의 핵딜</a></li>
+							<li><a href="javascript:;">올 겨울 신상</a></li>
+							<li><a href="javascript:;">우리 매장 핫템</a></li>
+						</ul>
+					</div>
+
+					<div id="best">
+
+						<div class="bestTit">
+							BEST PRODUCT
+						</div>
+
+						<ul>
+
+							<li>
+								<a href="javascript:;">
+									<div>
+										<div class="img_zone">
+											<img src="img/main/watch.png" alt="상품">
+										</div>
+										<div class="txt_zone">
+											<strong>[핵딜] 멋쟁이 시계 한정 특가 ~50%</strong>
+											<p>
+												<span class="color">판매가</span>
+												10,000원~
+											</p>
+											<span class="last">무료배송</span>
+										</div>
+										<img src="img/common/best1.png" alt="" class="ranking">
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:;">
+									<div>
+										<div class="img_zone">
+											<img src="img/main/watch.png" alt="상품">
+										</div>
+										<div class="txt_zone">
+											<strong>[핵딜] 멋쟁이 시계 한정 특가 ~50%</strong>
+											<p>
+												<span class="color">판매가</span>
+												10,000원~
+											</p>
+											<span class="last">무료배송</span>
+										</div>
+										<img src="img/common/best2.png" alt="" class="ranking">
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:;">
+									<div>
+										<div class="img_zone">
+											<img src="img/main/watch.png" alt="상품">
+										</div>
+										<div class="txt_zone">
+											<strong>[핵딜] 멋쟁이 시계 한정 특가 ~50%</strong>
+											<p>
+												<span class="color">판매가</span>
+												10,000원~
+											</p>
+											<span class="last">무료배송</span>
+										</div>
+										<img src="img/common/best3.png" alt="" class="ranking">
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<div id="mainBottomBanner">
+						<div>
+
+							<ul>
+								<li><a href="javascript:;">채용문의</a></li>
+								<li><a href="javascript:;">입점/제휴 문의</a></li>
+								<li><a href="javascript:;">공지사항</a></li>
+								<li><a href="javascript:;">고객의 소리</a></li>
+							</ul>
+
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</section>
+
+	<% include html/footer.html %>
+
+</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+
+		//메인 비쥬얼 부분 높이 확보
+		var imgWid=$("#visual > div > img").height();
+		$("#visual > div").height(imgWid);
+		$(window).resize(function(){
+			imgWid=$("#visual > div > img").height();
+			$("#visual > div").height(imgWid);
+		});
+
+		//메인 비쥬얼 이미지 수 만큼 버튼 생성
+		var visualLength=$("#visual > div > img").length;
+		var temp="";
+		$("#visual > div").append("<div id='visualBtn'></div>");
+		for(var i=1;i<=visualLength;i++){
+			temp+='<a href="javascript:;">'+i+'번째 메인 사진'+'</a>';
+		}
+		$("#visualBtn").append(temp);
+
+		//메인 비쥬얼 사진 fadeIn/Out
+		var index=0;
+		var speed=1000;
+		var roll;
+		var state=false;
+
+		$("#visualBtn > a").click(function(){
+			visualStop();
+			$("#visualBtn > a.on").removeClass("on");
+			$(this).addClass("on");
+			index=$(this).index();
+			presentIndex=$("#visual > div > img:visible").index();
+			if(index != presentIndex){
+				$("#visual > div > img:visible").fadeOut(speed);
+				$("#visual > div > img").eq(index).fadeIn(speed);
+			}
+			visualPlay();
+		});
+
+		function visualPlay(){
+			if(!state){
+				roll=setInterval(function(){
+					index++;
+					if(index >= visualLength){
+						index=0;
+					}
+					$("#visualBtn > a").eq(index).click();
+				},4000);
+			}
+			state=true;
+		}
+		function visualStop(){
+			if(state){
+				clearInterval(roll);
+			}
+			state=false;
+		}
+
+		$("#visualBtn > a").eq(index).click();
+
+	});
+</script>
+</body>
+</html>
