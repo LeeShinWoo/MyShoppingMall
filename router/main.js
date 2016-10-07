@@ -4,7 +4,17 @@ module.exports = function(app, fs, connection,util,db_query,formidable)
      res.render('index.html');
   });
   app.get('/loginPage',function(req,res){
-     res.render('login.html');
+    var error = req.query.error;
+    if(error){
+      res.render('login.html',{
+        error : true
+      });
+    }else{
+      res.render('login.html',{
+        error : false
+      });
+    }
+
   });
   app.get('/join',function(req,res){
      res.render('join.html');
@@ -17,9 +27,9 @@ module.exports = function(app, fs, connection,util,db_query,formidable)
        connection.query(query ,function(err,rows){
          if(rows.length == 1){
            sess.member = rows[0];
-           res.render('loginafter.html',rows[0]);
+           res.redirect('/shop');
          }else{
-           res.redirect('error.html');
+           res.redirect('/loginPage?error=loginError');
          }
 
        });

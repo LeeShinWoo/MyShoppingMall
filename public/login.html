@@ -18,6 +18,13 @@
 
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<% if(error) { %>
+	<script type="text/javascript">
+		window.addEventListener('load',function(){
+			alert("아이디와 비밀번호를 확인하세요~");
+		})
+	</script>
+	<% } %>
 </head>
 <body>
 <div id="wrap">
