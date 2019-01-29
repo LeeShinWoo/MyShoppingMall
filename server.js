@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('views',__dirname + '/public');
 app.set('view engine','ejs');
 app.engine('html', require('ejs').renderFile);
-
+    
 //mysql 관련 소스
 // lee youngwoo
 
